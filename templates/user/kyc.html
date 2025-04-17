@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KYC Verification | Crypto Platform</title>
+    <link rel="stylesheet" href="/static/css/user/profile_kyc.css">
+</head>
+<body>
+    <div class="container">
+        <h2>KYC Verification</h2>
+
+        <form method="POST" action="/submit_kyc" enctype="multipart/form-data" class="form">
+            <div class="form-group">
+                <label>Upload ID Document</label>
+                <input type="file" name="id_document" accept="image/*,application/pdf" required>
+            </div>
+
+            <div class="form-group">
+                <label>Upload Selfie Holding ID</label>
+                <input type="file" name="selfie_document" accept="image/*" required>
+            </div>
+
+            <button type="submit" class="btn">Submit KYC</button>
+        </form>
+    </div>
+</body>
+</html>
