@@ -76,3 +76,63 @@ body {
 input[type="file"] {
     padding: 10px;
 }
+.flash-messages {
+    margin-bottom: 20px;
+}
+
+.flash {
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.flash.success {
+    background-color: #45a29e;
+    color: #0b0c10;
+}
+
+.transaction-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.transaction-table th, .transaction-table td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #444;
+}
+
+.transaction-table th {
+    background-color: #222;
+    color: #00ff99;
+    font-weight: bold;
+}
+
+.transaction-table tr:hover {
+    background-color: #333;
+}
+.notification-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.notification-item {
+    background-color: #222;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 5px solid #00ff99;
+}
+
+.notification-item.success {
+    border-color: #28a745;
+}
+
+.notification-item.info {
+    border-color: #17a2b8;
+}
+

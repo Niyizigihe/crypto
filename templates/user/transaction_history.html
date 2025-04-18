@@ -2,70 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Transaction History | Crypto Platform</title>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Crypto Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/user/profile_kyc.css') }}">
 </head>
-<style>
-    .styled-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-    font-size: 16px;
-    background-color: #1f1f1f;
-    color: #ffffff;
-}
-.styled-table th, .styled-table td {
-    padding: 12px 15px;
-    border: 1px solid #00f7ff;
-}
-.styled-table th {
-    background-color: #00f7ff;
-    color: #000;
-}
-.styled-table tr:nth-child(even) {
-    background-color: #2a2a2a;
-}
-
-</style>
 <body>
     <div class="container">
-        <h2>Transaction History</h2>
+        <h2>📜 Transaction History</h2>
 
-        <table class="styled-table">
+        {% if transactions %}
+        <table class="transaction-table">
             <thead>
                 <tr>
-                    <th>Date</th>
                     <th>Type</th>
                     <th>Coin</th>
                     <th>Amount</th>
                     <th>Status</th>
+                    <th>Date</th>
                 </tr>
             </thead>
-            <tbody id="transaction-table-body">
-                <!-- Example transactions -->
+            <tbody>
+                {% for tx in transactions %}
                 <tr>
-                    <td>2025-04-17</td>
-                    <td>Deposit</td>
-                    <td>BTC</td>
-                    <td>$100.00</td>
-                    <td>Completed</td>
+                    <td>{{ tx.type }}</td>
+                    <td>{{ tx.coin }}</td>
+                    <td>{{ tx.amount }}</td>
+                    <td>{{ tx.status }}</td>
+                    <td>{{ tx.date }}</td>
                 </tr>
-                <tr>
-                    <td>2025-04-17</td>
-                    <td>Trade Win</td>
-                    <td>ETH</td>
-                    <td>$12.00</td>
-                    <td>Completed</td>
-                </tr>
-                <tr>
-                    <td>2025-04-17</td>
-                    <td>Withdraw</td>
-                    <td>USDT</td>
-                    <td>$50.00</td>
-                    <td>Pending</td>
-                </tr>
+                {% endfor %}
             </tbody>
         </table>
+        {% else %}
+        <p>No transactions yet.</p>
+        {% endif %}
     </div>
 </body>
 </html>

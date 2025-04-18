@@ -49,7 +49,9 @@
         <div class="menu-container">
             <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
             <div class="menu-links" id="menu-links">
-                <a href="{{ url_for('transaction_history') }}">📜 Transaction History</a>
+                <a href="{{ url_for('transactions') }}">📜 Transaction History</a>
+                <a href="{{ url_for('notifications') }}">🔔 Notifications</a>
+                <a href="{{ url_for('support') }}">🛟 Support</a>
                 <a href="{{ url_for('profile') }}">👤 Profile</a>
                 <a href="{{ url_for('kyc') }}">🛡️ KYC Verification</a>
                 <a href="{{ url_for('logout') }}">🚪 Logout</a>
